@@ -18,6 +18,6 @@ start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
 end = st.date_input('End',value=pd.to_datetime('today'))
 if len(dropdown) > 0:
   for i in dropdown:
-    df = yf.download(tickers[i],start,end)['Adj Close']
+    df = yf.download(tickers[i],start,end,auto_adjust=false)['Adj Close']
     st.title(reversed_ticker[tickers[i]])
     st.line_chart(df)
